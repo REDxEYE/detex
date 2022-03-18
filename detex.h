@@ -74,9 +74,12 @@ __BEGIN_DECLS
 
 #if _MSC_VER
 #define DETEX_INLINE_ONLY __forceinline
+#define DETEX_THREAD __declspec(thread)
 #else
+#define DETEX_THREAD __thread
 #define DETEX_INLINE_ONLY __attribute__((always_inline)) inline
 #endif
+
 #define DETEX_RESTRICT __restrict
 
 /* Maximum uncompressed block size in bytes. */
